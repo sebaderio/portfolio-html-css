@@ -8,9 +8,10 @@
 :root {
     // COLORS
     --COLOR-PRIMARY: #191d2b;
-    --COLOR-SECONDARY: #27ae60;
+    --COLOR-SECONDARY: #00acee;
     --COLOR-WHITE: #ffffff;
     --COLOR-BLACK: #000000;
+    --COLOR-GREEN: #27ae60;
     --COLOR-GREY0: #f8f8f8;
     --COLOR-GREY1: #dbe1e8;
     --COLOR-GREY2: #b2becd;
@@ -88,7 +89,6 @@ section {
 .sec5 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: teal;
 }
 
 .active {
@@ -518,6 +518,106 @@ section {
     }
 }
 
+// Contact
+
+.contact-container {
+    display: flex;
+    padding-top: 3.5rem;
+    .left-contact {
+        flex: 2;
+        h4 {
+            margin-top: 1rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+        p {
+            margin: 1rem 0;
+            line-height: 2rem;
+        }
+        .contact-info {
+            .contact-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                p {
+                    margin: 0.3rem 0 !important;
+                    padding: 0 !important;
+                }
+                .icon {
+                    display: grid;
+                    grid-template-columns: 40px 1fr;
+                    i {
+                        display: flex;
+                        align-items: center;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+        .contact-icons {
+            display: flex;
+            margin-top: 2rem;
+            a {
+                display: flex;
+                align-items: center;
+                color: var(--COLOR-WHITE);
+                background-color: var(--COLOR-GREY5);
+                cursor: pointer;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin: 0 0.4rem;
+                transition: var(--BASE-TRANSITION);
+                &:hover {
+                    background-color: var(--COLOR-SECONDARY);
+                    i {
+                        color: var(--COLOR-PRIMARY);
+                    }
+                }
+                i {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
+    .right-contact {
+        flex: 3;
+        margin-left: 3rem;
+        .input-control {
+            margin: 1.5rem 0;
+            input,
+            textarea {
+                border-radius: 30px;
+                font-weight: inherit;
+                font-size: inherit;
+                font-family: inherit;
+                padding: 0.8rem 1.1rem;
+                outline: none;
+                border: none;
+                background-color: var(--COLOR-GREY5);
+                width: 100%;
+                color: var(--COLOR-WHITE);
+                resize: none;
+            }
+        }
+        .input-control-name-email {
+            display: flex;
+            :last-child {
+                margin-left: 1.5rem;
+            }
+        }
+        .btn-container {
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+}
+
 // General components
 .btn-container {
     display: flex;
@@ -529,7 +629,7 @@ section {
     font-size: inherit;
     font-weight: 600;
     position: relative;
-    border: 1px solid var(--COLOR-SECONDARY);
+    border: 2px solid var(--COLOR-SECONDARY);
     display: flex;
     align-self: flex-start;
     display: flex;
