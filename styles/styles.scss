@@ -46,9 +46,10 @@ a {
 }
 
 header {
-    height: 100vh;
+    min-height: 100vh;
     color: var(--COLOR-WHITE);
     overflow: hidden;
+    padding: 0 !important;
 }
 
 section {
@@ -61,40 +62,17 @@ section {
 }
 
 .section {
+    display: none;
     transform: translateY(-100%) scale(0);
     transition: var(--BASE-TRANSITION);
     background-color: var(--COLOR-PRIMARY);
 }
 
-.sec1 {
-    display: none;
-    transform: translateY(0) scale(1);
-}
-
-.sec2 {
-    display: none;
-    transform: translateY(0) scale(1);
-}
-
-.sec3 {
-    display: none;
-    transform: translateY(0) scale(1);
-}
-
-.sec4 {
-    display: none;
-    transform: translateY(0) scale(1);
-}
-
-.sec5 {
-    display: none;
-    transform: translateY(0) scale(1);
-}
-
 .active {
     display: block;
-    animation: scaleAnim 1s ease-in-out;
-    @keyframes scaleAnim {
+    animation: appear 1s ease-in-out;
+    transform: translateY(0) scaleY(1);
+    @keyframes appear {
         0% {
             transform: translateY(-100%) scaleY(0);
         }
@@ -106,7 +84,6 @@ section {
 }
 
 // Controls
-
 .controls {
     position: fixed;
     z-index: 10;
@@ -149,7 +126,7 @@ section {
 .header-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 100%;
+    min-height: 100vh;
     .left-header {
         display: flex;
         align-items: center;
@@ -158,7 +135,12 @@ section {
             transition: var(--BASE-TRANSITION);
             width: 65%;
             height: 100%;
-            background-color: var(--COLOR-SECONDARY);
+            // background-color: var(--COLOR-SECONDARY);
+            background: linear-gradient(
+                to right,
+                var(--COLOR-SECONDARY),
+                var(--COLOR-PRIMARY)
+            );
             position: absolute;
             left: 0;
             top: 0;
@@ -402,6 +384,7 @@ section {
     margin-top: 3rem;
     .portfolio-item {
         position: relative;
+        border-radius: 15px;
         img {
             width: 100%;
             height: 300px;
@@ -464,7 +447,7 @@ section {
     transform: scale(1);
 }
 
-// Blog
+// Blogs
 
 .blogs-container {
     display: grid;
@@ -630,6 +613,7 @@ section {
     font-weight: 600;
     position: relative;
     border: 2px solid var(--COLOR-SECONDARY);
+    box-shadow: inset 0px 0px 10px var(--COLOR-SECONDARY);
     display: flex;
     align-self: flex-start;
     display: flex;
@@ -688,3 +672,5 @@ section {
         }
     }
 }
+
+@import "./media";
