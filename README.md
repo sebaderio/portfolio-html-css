@@ -3,7 +3,3 @@
 ## How to run locally
 
 - Open index.html in the browser
-
-## TODOs
-
-- Display the profile picture differently
