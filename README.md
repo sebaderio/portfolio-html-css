@@ -7,4 +7,3 @@
 ## TODOs
 
 - Display the profile picture differently
-- Get rid of the black, narrow line between border and icon in the button

@@ -70,17 +70,19 @@ section {
 
 .active {
     display: block;
-    animation: appear 1s ease-in-out;
+    // NOTE: I got irritated when waiting 1s each time.
+    //       Decided to comment out the animation.
+    // animation: appear 1s ease-in-out;
     transform: translateY(0) scaleY(1);
-    @keyframes appear {
-        0% {
-            transform: translateY(-100%) scaleY(0);
-        }
+    // @keyframes appear {
+    //     0% {
+    //         transform: translateY(-100%) scaleY(0);
+    //     }
 
-        100% {
-            transform: translateY(0) scaleY(1);
-        }
-    }
+    //     100% {
+    //         transform: translateY(0) scaleY(1);
+    //     }
+    // }
 }
 
 // Controls
@@ -118,6 +120,9 @@ section {
             color: var(--COLOR-GREY2);
             pointer-events: none;
         }
+        &:hover {
+            background-color: var(--COLOR-GREY3);
+        }
     }
 }
 
@@ -148,10 +153,7 @@ section {
             clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
         }
         .image {
-            border-top-left-radius: var(--BR-SM2);
-            border-top-right-radius: var(--BR-SM2);
-            border-bottom-left-radius: var(--BR-SM2);
-            border-bottom-right-radius: var(--BR-SM2);
+            border-radius: var(--BR-SM2);
             width: 68%;
             height: 90%;
             margin-left: 4rem;
@@ -615,8 +617,7 @@ section {
     font-size: inherit;
     font-weight: 600;
     position: relative;
-    border: 2px solid var(--COLOR-SECONDARY);
-    box-shadow: inset 0px 0px 10px var(--COLOR-SECONDARY);
+    box-shadow: inset 0px 0px 10px 2px var(--COLOR-SECONDARY);
     display: flex;
     align-self: flex-start;
     display: flex;
